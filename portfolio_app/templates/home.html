@@ -21,7 +21,9 @@
                     Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
                     culpa qui officia deserunt mollit anim id est laborum.
                 </p>
-                <button class="btn btn-outline-primary btn-lg">See more</button>
+                <a
+                    href="https://docs.google.com/document/d/1onIu0yks6XOaRmlzqIoJwccbhc20JsIP8xmVhUDWEHU/edit?usp=sharing"><button
+                        class="btn btn-outline-primary btn-lg">See more</button></a>
             </h1>
         </div>
     </div>
@@ -29,7 +31,7 @@
 
 
 <article class="about" id="about">
-    <h1 class="text-center" style="color: rgba(19, 65, 151, 0.651);">About Me</h1>
+    <h1 class="text-center" style="color: blue;">About Me</h1>
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-sm-12">
@@ -38,17 +40,13 @@
                             class="img-fluid" alt="Profile Picture" style="width: 100%;"></a>
                 </figure>
                 <figcaption>
-                    <span class="text-justify" style="padding-right: 15px;">Full Stack Web
-                        Developer</span>
+                    <span class="text-justify" style="padding-right: 20px;">Full Stack Web Developer</span>
                 </figcaption>
             </div>
 
             <div class=" col-md-8 col-sm-12 desc">
-                <a
-                    href="https://docs.google.com/document/d/1onIu0yks6XOaRmlzqIoJwccbhc20JsIP8xmVhUDWEHU/edit?usp=sharing">
-                    <h3>Nessim Azoulay</h3>
-                </a>
-                <p class="text-muted">
+                <h3 style="color: blue;">Nessim Azoulay</h3>
+                <p class="font-weight-normal">
                     A motivated, adaptable and responsible Full Stack Web Developer with an Interactive
                     Communications degree seeking a junior role. Experienced in Python and JavaScript based
                     programming with strong skills in website building and project management. I have a methodical,
@@ -63,13 +61,13 @@
 <section class="projects" id="projects" style="color: rgba(58, 199, 192, 0.836);">
     <h1 class="text-center">Projects</h1>
     <div id="myBtnContainer">
-        <button class="btn " onclick="filterSelection('all')"> Show all</button>
-        <button class="btn" onclick="filterSelection('html/css')"> HTML/CSS</button>
-        <button class="btn" onclick="filterSelection('games')"> Games</button>
-        <button class="btn" onclick="filterSelection('hackathons')"> Hackathons</button>
-        <button class="btn" onclick="filterSelection('django')"> Django</button>
-    </div>
-    <a class="btn" href="{% url 'projects' %}">Add Projects</a>
+        <button class="btn btn-outline-primary btn-lg" onclick="filterSelection('all')"> Show all</button>
+        <button class="btn btn-outline-warning btn-lg" onclick="filterSelection('html/css')"> HTML/CSS</button>
+        <button class="btn btn-outline-success btn-lg" onclick="filterSelection('games')"> Games</button>
+        <button class="btn btn-outline-danger btn-lg" onclick="filterSelection('hackathons')"> Hackathons</button>
+        <button class="btn btn-outline-info btn-lg" onclick="filterSelection('django')"> Django</button>
+        <a class="btn btn-outline-dark btn-lg" href="{% url 'projects' %}">Add Project</a>
+    </div><br>
 
 
     <div class="container">
@@ -175,6 +173,16 @@
                         <a href="https://github.com/Ness247142/DI_Bootcamp/tree/main/Week10/Day3/Btre%20Real-Estate"><img
                                 src="https://jacksonvillemom.com/wp-content/uploads/2019/06/Real-Estate-Guide_1200x628.png"
                                 alt="Btre Real Estate" style="width:100%"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="filterDiv col-md-4 col-sm-12">
+                <div class="column django">
+                    <div class="content">
+                        <h4>Djanblog</h4>
+                        <a href="https://github.com/Ness247142/djanblog"><img
+                                src="https://centralhubofafricalogistics.co.zw/wp-content/uploads/2020/11/How-blogs-changed-the-world.jpg"
+                                alt="Djanblog" style="width:100%"></a>
                     </div>
                 </div>
             </div>
@@ -382,7 +390,7 @@
         <form>
             <div class="row">
                 <div class="col-md-4 col-sm-12">
-                    <h1 style="color: rgb(85, 87, 184);">Get in Touch</h1><br>
+                    <h1 style="color: blue;">Get in Touch</h1><br>
                     <address>
                         <a href='https://github.com/Ness247142' class="fa fa-github fa-2x" name="logo-github">
                         </a>
@@ -417,8 +425,7 @@
                     </div>
 
                     <a href="mailto: ness.azoulay.ta@gmail.com"><input type="submit"
-                            style="background-color: rgba(23, 0, 128, 0.87);" class="btn btn-secondary btn-block"
-                            value="Send">
+                            style="background-color: rgb(23, 0, 128);" class="btn btn-secondary btn-block" value="Send">
                     </a>
 
                 </div>
