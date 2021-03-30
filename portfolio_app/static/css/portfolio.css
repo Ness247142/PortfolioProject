@@ -290,37 +290,9 @@ address a {
     padding: 10px;
 }
 
-@media all and (min-width: 1280px) and (max-width: 1450px) {
+@media all and (min-width: 480px) and (max-width: 1450px) {
     body {
         width: 100%;
-        background-color: rgb(223, 223, 147);
-    }
-}
-
-@media all and (min-width: 1024px) and (max-width: 1280px) {
-    body {
-        width: 100%;
-        background-color: lightcyan;
-    }
-}
-
-@media all and (min-width: 768px) and (max-width: 1024px) {
-    body {
-        width: 100%;
-        background-color: lightgoldenrodyellow;
-    }
-}
-
-@media all and (min-width: 480px) and (max-width: 768px) {
-    body {
-        width: 100%;
-        background-color: lightgreen;
-    }
-}
-
-@media all and (max-width: 480px) {
-    body {
-        width: 100%;
-        background-color: lightseagreen;
+        background-color: rgb(196, 248, 248);
     }
 }
