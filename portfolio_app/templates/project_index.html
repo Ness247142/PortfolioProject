@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% include "navbar.html" %}
+
+
+{% block content %}
+<br><br><br><br>
+<h1 style="text-align: center;">Project Index</h1><br>
+
+<div class="row">
+    {% for project in projects %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <img class="card-img-top" src="{% static project.image %}">
+            <div class="card-body">
+                <h5 class="card-title">{{ project.title }}</h5>
+                <p class="card-text">{{ project.description }}</p>
+                <p class='text-center'><a href="{% url 'project_detail' project.pk %}" class="btn btn-outline-primary">
+                        Read More
+                    </a></p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
