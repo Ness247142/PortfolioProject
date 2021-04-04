@@ -1,0 +1,459 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% include "navbar.html" %}
+
+
+{% block title%}Portfolio Home{% endblock %}
+
+{% block content %}
+
+<header class="header">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="description text-center">
+            <h1>Hello! Welcome To My official Website.
+                <p>
+                    Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <a
+                    href="https://docs.google.com/document/d/1onIu0yks6XOaRmlzqIoJwccbhc20JsIP8xmVhUDWEHU/edit?usp=sharing"><button
+                        class="btn btn-outline-primary btn-lg">See more</button></a>
+            </h1>
+        </div>
+    </div>
+</header>
+
+<article class="about" id="about">
+    <h1 class="text-center" style="color: blue;">About Me</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-12">
+                <figure>
+                    <a href="https://github.com/Ness247142/DI_Bootcamp"><img src="{% static 'Nessim.jpg' %}"
+                            class="img-fluid" alt="Profile Picture" style="width: 100%;"></a>
+                </figure>
+                <figcaption>
+                    <span class="text-justify" style="padding-right: 20px;">Full Stack Web Developer</span>
+                </figcaption>
+            </div>
+
+            <div class=" col-md-8 col-sm-12 desc">
+                <h3 style="color: blue;">Nessim Azoulay</h3>
+                <p class="font-weight-normal">
+                    A motivated, adaptable and responsible Full Stack Web Developer with an Interactive
+                    Communications degree seeking a junior role. Experienced in Python and JavaScript based
+                    programming with strong skills in website building and project management. I have a methodical,
+                    customer-focused approach to work and a strong drive to see projects through to completion.
+                </p>
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<section class="projects" id="projects" style="color: rgba(58, 199, 192, 0.836);">
+    <a class="article" href="{% url 'project_index' %}">
+        <h1 class="text-center">Projects
+        </h1>
+    </a>
+
+    <div id="myBtnContainer">
+        <button class="btn btn-outline-primary btn-lg" onclick="filterSelection('all')"> Show all</button>
+        <button class="btn btn-outline-warning btn-lg" onclick="filterSelection('html/css')"> HTML/CSS</button>
+        <button class="btn btn-outline-success btn-lg" onclick="filterSelection('games')"> Games</button>
+        <button class="btn btn-outline-danger btn-lg" onclick="filterSelection('hackathons')"> Hackathons</button>
+        <button class="btn btn-outline-info btn-lg" onclick="filterSelection('django')"> Django</button>
+
+        {% if user.is_superuser %}
+        <a class="btn btn-outline-dark btn-lg" href="{% url 'add_projects' %}">Add Project</a>
+        {% endif %}
+
+    </div><br>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="filterDiv col-md-4 col-sm-12">
+                <div class="column html/css">
+                    <div class="content">
+                        <h4> Landing Page </h4>
+                        <a href="https://github.com/Ness247142/DI_Bootcamp/tree/main/Week1/Day5/Mini%20Project"><img
+                                src="https://www.lesemotionneurs.com/wp-content/uploads/2020/05/Gabarit_Image_Entete_Site-2.jpg"
+                                alt="Landing Page" style="width:100%"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="filterDiv col-md-4 col-sm-12">
+                <div class="column html/css">
+                    <div class="content">
+                        <h4> Calculator </h4>
+                        <a href="https://github.com/Ness247142/DI_Bootcamp/tree/main/Week2/Day5/Mini%20Project"><img
+                                src="https://media.istockphoto.com/vectors/calculator-icon-vector-id1000600468?b=1&k=6&m=1000600468&s=612x612&w=0&h=qWQxi2NruFHFrIV2LyWV4lLfnnzI2_0FQd9cOXoytWo="
+                                alt="Calculator" style="width:100%"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="filterDiv col-md-4 col-sm-12">
+                <div class="column games">
+                    <div class="content">
+                        <h4> Coloring Game </h4>
+                        <a href="https://github.com/Ness247142/DI_Bootcamp/tree/main/Week3/Day4/Mini%20Project%201"><img
+                                src="https://steamcdn-a.akamaihd.net/steam/apps/1216200/capsule_616x353.jpg?t=1585337145"
+                                alt="Coloring Game" style="width:100%"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="filterDiv col-md-4 col-sm-12">
+                <div class="column hackathons">
+                    <div class="content">
+                        <h4>Art Gallery</h4>
+                        <a href="https://github.com/Ness247142/Hackathon1"><img
+                                src="https://previews.123rf.com/images/ikonstudio/ikonstudio1806/ikonstudio180600026/105412752-art-gallery-logo-color-paintings-emblem-with-triangles-and-lines-abstract-picture-studio-logotype-mu.jpg"
+                                alt="Art Gallery Hackathon #1" style="width:100%"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="filterDiv col-md-4 col-sm-12">
+                <div class="column games">
+                    <div class="content">
+                        <h4>Tic Tac Toe</h4>
+                        <a
+                            href="https://github.com/Ness247142/DI_Bootcamp/blob/main/Week4/Day5/Mini%20Project/Tic%20Tac%20Toe.py"><img
+                                src="https://image.freepik.com/free-vector/tic-tac-toe-game-neon-linear-outline-icon_7280-2418.jpg"
+                                alt="Tic Tac Toe" style="width:100%"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="filterDiv col-md-4 col-sm-12">
+                <div class="column games">
+                    <div class="content">
+                        <h4>Rock-Paper-Scissors</h4>
+                        <a
+                            href="https://github.com/Ness247142/DI_Bootcamp/blob/main/Week5/Day5/Mini%20Project/rock-paper-scissors.py"><img
+                                src="https://www.esquireme.com/public/images/2017/05/29/rock_paper_scissors__2x.png"
+                                alt="Rock-Paper-Scissors" style="width:100%"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="filterDiv col-md-4 col-sm-12">
+                <div class="column hackathons">
+                    <div class="content">
+                        <h4>Connect 4</h4>
+                        <a href="https://github.com/Ness247142/Hackathon2"><img
+                                src="https://store-images.s-microsoft.com/image/apps.41929.14246448385562777.7795b656-4cc6-43e1-897f-ecca74691263.ce6424bf-ec09-434a-9a0d-6d9507621cfa?mode=scale&q=90&h=1080&w=1920"
+                                alt="Connect 4" style="width:100%"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="filterDiv col-md-4 col-sm-12">
+                <div class="column django">
+                    <div class="content">
+                        <h4>Bike Store</h4>
+                        <a
+                            href="https://github.com/Ness247142/DI_Bootcamp/tree/main/Week8/Day5/Mini%20Project/bike_store"><img
+                                src="https://enjoy-napa-valley.com/wp-content/uploads/napa-valley-bike-rentals.jpg"
+                                alt="Bike & Car Rental" style="width:100%"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="filterDiv col-md-4 col-sm-12">
+                <div class="column django">
+                    <div class="content">
+                        <h4>Forum App</h4>
+                        <a
+                            href="https://github.com/Ness247142/DI_Bootcamp/tree/main/Week9/Day5/Exercises%20XP/community/community"><img
+                                src="https://i1.wp.com/www.ouveillan.fr/wp-content/uploads/2020/07/forum.jpg?fit=1000%2C1000&ssl=1"
+                                alt="Django Forum App" style="width:100%"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="filterDiv col-md-4 col-sm-12">
+                <div class="column django">
+                    <div class="content">
+                        <h4>Btre Real-Estate</h4>
+                        <a href="https://github.com/Ness247142/DI_Bootcamp/tree/main/Week10/Day3/Btre%20Real-Estate"><img
+                                src="https://jacksonvillemom.com/wp-content/uploads/2019/06/Real-Estate-Guide_1200x628.png"
+                                alt="Btre Real Estate" style="width:100%"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="filterDiv col-md-4 col-sm-12">
+                <div class="column django">
+                    <div class="content">
+                        <h4>Djanblog</h4>
+                        <a href="https://github.com/Ness247142/djanblog"><img
+                                src="https://centralhubofafricalogistics.co.zw/wp-content/uploads/2020/11/How-blogs-changed-the-world.jpg"
+                                alt="Djanblog" style="width:100%"></a>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row">
+                {% for project in projects %}
+                <div class="col-md-4">
+                    <div class="card mb-2">
+                        <img class="card-img-top" src="{% static project.image %}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ project.title }}</h5>
+                            <p class="card-text">{{ project.description }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div> -->
+        </div>
+    </div>
+</section>
+
+<section class="interests" id="interests">
+    <h1 class="text-center" style="color: blue;">Interests</h1>
+    <div class="container2">
+        <div class="row">
+            <div class="col-md-4 col-sm-12">
+                <div class="card">
+                    <img class="card-img-top"
+                        src="https://www.thedj.co.uk/wp-content/uploads/2014/07/music-colour-splash.jpg"
+                        class="img-fluid" width="100%" height="250px">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color: blue;">Youtube Music</h4>
+                        <p class="card-text">A new music service with official albums, singles, videos, remixes, live
+                            performances and more for Android, iOS and desktop. It's all here.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://music.youtube.com/" class="card-link">Read more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="card">
+                    <img class="card-img-top" src="https://100pourcentcrossfit.fr/wp-content/uploads/2018/12/News.jpg"
+                        class="img-fluid" width="100%" height="250px">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color: blue;">I24news</h4>
+                        <p class="card-text">Tune into i24NEWS for global news broadcasting live from around the world
+                            bringing you the day's biggest stories from the U.S., Europe, and the Middle East.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://www.i24news.tv/en" class="card-link">Read more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <div class="card">
+                    <img class="card-img-top"
+                        src="https://zaclab.com/wp-content/uploads/2019/12/Website-Developers-in-India.jpg"
+                        class="img-fluid" width="100%" height="250px">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color:blue;">Stack Overflow</h4>
+                        <p class="card-text">Stack Overflow is the largest, most trusted online community for developers
+                            to learn, share their knowledge, and build their careers. </p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://stackoverflow.com" class="card-link">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="skills" id="skills">
+    <h1 class="text-center" style="color: blue;">Skills</h1>
+    <div class="container" style="display: flex;">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 item">
+                <a href="https://github.com/Ness247142/DI_Bootcamp/tree/main/Week1"><img
+                        src="https://icon-library.com/images/html5-icon/html5-icon-13.jpg" class="img-fluid"
+                        width="100%" alt="HTML 5">
+                    <div class="des">
+                        HTML 5
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 item">
+                <a href="https://github.com/Ness247142/DI_Bootcamp/tree/main/Week1"><img
+                        src="https://i.lensdump.com/i/8LCZ32.png" class="img-fluid" alt="CSS 3" width="100%">
+                    <div class="des">
+                        CSS 3
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 item">
+                <a href="https://github.com/Ness247142/DI_Bootcamp/tree/main/Week2"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png"
+                        class="img-fluid" alt="JavaScript" width="100%">
+                    <div class="des">
+                        JavaScript
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 item">
+                <a href="https://github.com/Ness247142/DI_Bootcamp/tree/main/Week4"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/768px-Python-logo-notext.svg.png"
+                        class="img-fluid" alt="Python" width="100%">
+                    <div class="des">
+                        Python
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 item">
+                <a href="https://github.com/Ness247142/DI_Bootcamp/tree/main/Week1"><img
+                        src="https://i2.wp.com/bootstrapcreative.com/wp-bc/wp-content/uploads/2016/01/bootstrap-logo.png?fit=1774%2C1532&ssl=1"
+                        class="img-fluid" alt="Bootstrap" width="100%">
+                    <div class="des">
+                        Bootstrap
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 item">
+                <a href="https://github.com/Ness247142/DI_Bootcamp/tree/main/Week6"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg"
+                        class="img-fluid" alt="PostgreSQL" width="100%">
+                    <div class="des">
+                        PostgreSQL
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 item">
+                <a href="https://github.com/Ness247142/DI_Bootcamp/tree/main/Week6"><img
+                        src="https://www.pinclipart.com/picdir/big/9-92644_database-clipart-raw-data-azure-sql-server-png.png"
+                        class="img-fluid" alt="SQL" width="100%">
+                    <div class="des">
+                        SQL
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 item">
+                <a href="https://github.com/Ness247142/DI_Bootcamp/tree/main/Week8"><img
+                        src="https://cdn2.hubspot.net/hubfs/3885898/django.png" class="img-fluid" alt="Django"
+                        width="100%">
+                    <div class="des">
+                        Django
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 item">
+                <a href="https://github.com/Ness247142/DI_Bootcamp/tree/main/Week5"><img
+                        src="https://developers.institute/wp-content/uploads/2020/05/API.png" class="img-fluid"
+                        alt="API" width="100%">
+                    <div class="des">
+                        API
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 item">
+                <a href="https://github.com/Ness247142/DI_Bootcamp/tree/main/Week1"><img
+                        src="https://camo.githubusercontent.com/ce9c7a173f38722e129d5ae832a11c928ff72683fae74cbcb9fff41fd9957e63/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f7468756d622f332f33662f4769745f69636f6e2e7376672f3130323470782d4769745f69636f6e2e7376672e706e67"
+                        class="img-fluid" alt="Git" width="100%">
+                    <div class="des">
+                        Git
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 item">
+                <a href="https://github.com/Ness247142/DI_Bootcamp/tree/main/Week6"><img
+                        src="https://www.pentarray.com/wp-content/uploads/2018/02/database-logo.png" class="img-fluid"
+                        alt="Database" width="100%">
+                    <div class="des">
+                        Database
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 item">
+                <a href="https://github.com/Ness247142/DI_Bootcamp/tree/main/Week4"><img
+                        src="https://developers.institute/wp-content/uploads/2020/05/Regex.png" class="img-fluid"
+                        alt="Re/g" width="100%">
+                    <div class="des">
+                        Regex
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 item">
+                <a href="https://github.com/Ness247142/DI_Bootcamp/tree/main/Week5"><img
+                        src="https://developers.institute/wp-content/uploads/2020/05/OOP.png" class="img-fluid"
+                        alt="OOP" width="100%">
+                    <div class="des">
+                        OOP
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 item">
+                <a href="https://github.com/Ness247142/DI_Bootcamp/tree/main/Week5"><img
+                        src="https://miro.medium.com/max/800/1*Q5EUk28Xc3iCDoMSkrd1_w.png" class="img-fluid" alt="Flask"
+                        width="100%">
+                    <div class="des">
+                        Flask
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 item">
+                <a href="https://github.com/Ness247142/DI_Bootcamp"><img
+                        src="https://developers.institute/wp-content/uploads/2020/05/Visual-Studio.png"
+                        class="img-fluid" alt="Visual Studio" width="100%">
+                    <div class="des">
+                        Visual Studio
+                    </div>
+                </a>
+            </div>
+        </div>
+</section>
+
+
+<section class="contact" id="contact">
+    <h2>&nbsp</h2>
+    <div class="container">
+        <hr>
+
+        <form action="https://mail.google.com/mail/u/0/#inbox">
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <h1 style="color: blue;">Get in Touch</h1><br>
+                    <address>
+                        <a href='https://github.com/Ness247142' class="fa fa-github fa-2x" name="logo-github">
+                        </a>
+                        <a href='https://www.linkedin.com/in/nessim-azoulay/' class="fa fa-linkedin-square fa-2x"
+                            name="logo-linkedin">
+                        </a>
+                        <a href='https://www.facebook.com/nessim.azoulay/' class="fa fa-facebook fa-2x"
+                            name="logo-facebook">
+                        </a>
+                    </address>
+                </div>
+
+                <div class="col-md-8 col-sm-12">
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg" placeholder="First Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg" placeholder="Last Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg" placeholder="Phone Number" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg" placeholder="Email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea type="text" class="form-control form-control-lg" placeholder="Comments"></textarea>
+                    </div>
+
+                    <input type="submit" style="background-color: rgb(23, 0, 128);" class="btn btn-secondary btn-block"
+                        value="Send">
+                </div>
+            </div>
+        </form>
+
+    </div>
+</section>
+<script src="{% static 'js/portfolio.js' % }"></script>
+
+{% endblock content %}
